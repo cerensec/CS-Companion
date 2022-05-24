@@ -1,0 +1,9 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}

@@ -1,0 +1,35 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    text-align: center;
+}
+
+label{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.pswInput{
+    align-self: center;
+    width: 10rem;
+}
+.btn{
+    cursor: pointer;
+    height: 2rem;
+    margin-top: 10px ;
+    align-self: center;
+    width: 10rem;
+    background-color:#253875;
+    color: white;
+    border: 1px solid #253875;
+    border-radius: 5px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    margin: auto;
+}

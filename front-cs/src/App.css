@@ -1,0 +1,490 @@
+:root{
+  --white-color: white;
+  --main-blue-color: #253875;
+  --main-orange-color: #f5b33f;
+  --main-secondary-color: #8494AF;
+}
+
+.App {
+  display: flex;
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.sideBar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  background-color: #253875;
+  width: 18vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: width .3s ease-in;
+}
+
+.sideBar::-webkit-scrollbar{
+  display: none;
+}
+.sideBar.inactive::-webkit-scrollbar{
+  display: none;
+}
+
+.sideBar .mainMenu .menuLogo{
+  color: white;
+}
+
+.sideBar.inactive{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 8vw;
+  transition: width .3s ease-in;
+}
+
+.sideBar .userInfo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  transition: width .3s ease-in;
+}
+.sideBar .userInfo .userLogo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-size: large;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #253875;
+  border-radius: 5px;
+}
+.sideBar .userInfo .info {
+  font-size: 0.9em;
+  padding-left: 5px;
+}
+.email{
+  padding-left: 5px;
+  font-size: 0.6em;
+  margin-top: 2px;
+}
+.toggleBtn{
+  cursor: pointer;
+  margin-left: 20px;
+}
+.sideBar .solid{
+  width: 17vw;
+  border-top: 1px grey;
+  border-radius: 5px;
+  transition: width .3s ease-in;
+}
+.sideBar.inactive .solid{
+  width: 7vw;
+  border-top: 1px grey;
+  border-radius: 5px;
+}
+
+.mainMenu{
+  width: 9.5rem;
+  color: white;
+
+}
+
+.mainMenu ul{
+  margin: auto;
+  padding-inline-start: 0;
+}
+.mainMenu ul .menuItem{
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  margin-top: 10px;
+  display: flex;
+  list-style: none;
+}
+
+.menuLink{
+  text-decoration: none;
+  color: white;
+  padding-left:10px;
+  font-size: 1em;
+}
+
+.sideBar .mainMenu span{
+  cursor: pointer;
+}
+
+.hide{
+  display: none !important;
+}
+
+.mainMenu .subMenu{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.mainMenu .subMenu li{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 1rem;
+  padding: 5px;
+  list-style: none;
+}
+
+.mainMenu .subMenu .menuLogo{
+  padding-top: 0.1rem;
+}
+
+.subMenuLink{
+  color: white;
+  text-decoration: none;
+  padding-left: 5px;
+  font-size: 0.9em;
+}
+
+.subMenuLink:hover{
+  color: white;
+}
+
+.subMenuArrow{
+  margin-top:0.2rem;
+  margin-left: 0.4rem;
+}
+
+.sideBar.inactive .mainMenu{
+  width: 2rem;
+  transition: width .3s ease-in;
+}
+
+.sideBar.inactive .info{
+  display: none;
+  transition: width .3s ease-in;
+}
+
+.sideBar.inactive .mainMenu .subMenuArrow{
+  display: none;
+}
+
+.sideBar.inactive .mainMenu .subMenu{
+  display: none;
+}
+
+.sideBar.inactive .toggleBtn{
+  cursor: pointer;
+  margin-left:15px;
+}
+
+.sideBar.inactive .mainMenu .menuLink{
+  display: none;
+}
+
+.hamburguerMenu{
+  display: none;
+}
+
+.container{
+  margin-left: 18vw;
+  transition: margin-left .2s ease-in;
+}
+
+.container.inactive{
+  margin-left: 8vw;
+  transition: margin-left .2s ease-in;
+}
+
+.backgroundImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  filter: blur(2px);
+  z-index: -1;
+}
+
+.logo{
+  top:8vh;
+  left: 30vw;
+}
+
+.homeContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 84vw;
+  height: 100vh;
+}
+.presentationCard{
+  height: 27em;
+  width: 20em;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 2px 3px #8888;
+  border-radius: 40px;
+}
+
+.title{
+  color: var(--main-blue-color);
+}
+
+.projectContainer{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.gridWrapper{
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 5px;
+}
+
+.gridItem {
+  margin: auto;
+  width: 15rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCard{
+  width: 12rem;
+  height: 10rem;
+  margin: 0.5rem;
+  background-color: var(--main-secondary-color);
+  padding: 20px;
+  box-shadow: 5px 7px #888888;
+}
+
+.cardButton{
+  cursor: pointer;
+  position: absolute;
+  width: 10rem;
+  left: 1rem;
+  bottom: 0.5rem;
+}
+
+.secondaryContainer{
+  width: calc(100vw - 20vw);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.container.inactive .componentContainer .secondaryContainer{
+  width: calc(100vw - 10vw);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.container.inactive .componentContainer{
+  text-align: center;
+  margin: auto;
+  width: calc(100vw - 10vw) !important;
+}
+
+.componentContainer{
+  text-align: center;
+  margin: auto;
+}
+
+.field{
+  background-color: #dddddd;
+}
+
+table{
+  margin: auto;
+  border-collapse: collapse;
+  width: 25rem;
+}
+
+td,th{
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even){
+  background-color: #dddddd;
+}
+
+
+.filterForm{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.filterFormItem{
+  width: 15rem;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.filterSelect{
+  width: 15rem;
+}
+
+.filterButton{
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.componentHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.totalContainer{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 0 15px 15px 15px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.formInput{
+  width: 12rem;
+  height: 32px;
+}
+
+.formLabel{
+  width: 12rem;
+  display: inline-block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #212529;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ant-select-selector:hover, .ant-select-selector:focus-within {
+  border: 1px solid var(--main-blue-color) !important;
+}
+
+.ant-picker:hover, .ant-picker:focus-within{
+  border: 1px solid var(--main-blue-color) !important;
+}
+
+.profileBottom{
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  width: 13rem;
+  margin: auto;
+}
+.chartDiv{
+  display: flex;
+
+}
+.chartSection{
+  margin: auto;
+}
+.cellphoneBackground{
+  display: none;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .sideBar .info{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .sideBar{
+    width: 9rem;
+  }
+  .sideBar.inactive .userLogo{
+    display: none;
+  }
+  .sideBar.inactive{
+    height: 3rem;
+    width: 3rem;
+    background-color: transparent;
+  }
+  .sideBar.inactive .toggleBtn{
+    display: none;
+  }
+  .sideBar.inactive .hamburguerMenu{
+    display: block;
+    color: black;
+  }
+  .sideBar .hamburguerMenu{
+      display: block;
+  }
+  .sideBar .menuItem{
+    font-size: 0.9em;
+    margin-left: 1rem;
+  }
+  .sideBar .userLogo, .info, .toggleBtn{
+    display: none !important;
+  }
+  .container{
+    margin-left: 21vw;
+  }
+  .componentContainer{
+    margin-left: 20vw;
+  }
+  .backgroundImage{
+    display: none;
+  }
+  .cellphoneBackground{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
+  .logo{
+    display: none;
+  }
+}
