@@ -23,12 +23,13 @@ module.exports = (app,db) =>{
             if(user.code){
                 res.json({status:500,msg:"Error creating the user",err:user})
             }
-            mail(
-                req.body.email,
-                'Account creation',
-                "Welcome to CS Corporativo",
-                'To access CS Corporativo Companion you have to validate your account by clicking <a href="http://localhost:3001/cscorp/user/validateUser/'+user.key_id+'">here</a>'
-            )
+            // Here I was sending a confirmation mail to the account owner
+            // mail(
+            //     req.body.email,
+            //     'Account creation',
+            //     "Welcome to CS Corporativo",
+            //     'To access CS Corporativo Companion you have to validate your account by clicking <a href="http://localhost:3001/cscorp/user/validateUser/'+user.key_id+'">here</a>'
+            // )
             res.json({status:200,msg:"User created"});
         }
     })
@@ -41,7 +42,7 @@ module.exports = (app,db) =>{
         }
         res.json({status:200,msg:"User retrieved!",user:user})
     })
-
+    // This was the route to validate one user via an email
     app.get('/cscorp/user/validateUser/:key_id',async(req,res,next)=>{
         let key_id = req.params.key_id;
         let validate = await UserModel.updateValidateUser(key_id);
@@ -80,15 +81,15 @@ module.exports = (app,db) =>{
         }
 
         let key_id = result.key_id;
-
-        mail(
-            req.body.email,
-            "Change your password",
-            "You forgot your password?",
-            'To change your password click <a href="http://localhost:3001/cscorp/user/changePassword/'+result.key_id+'">here</a>'
-        )
+        // This was the mail sent to change the password
+        // mail(
+        //     req.body.email,
+        //     "Change your password",
+        //     "You forgot your password?",
+        //     'To change your password click <a href="http://localhost:3001/cscorp/user/changePassword/'+result.key_id+'">here</a>'
+        // )
     })
-
+    // This was the route to display the form to change the user's password
     app.get('/cscorp/user/changePassword/:key_id',async(req,res,next)=>{
         let key_id = req.params.key_id;
 
@@ -103,7 +104,7 @@ module.exports = (app,db) =>{
         }
         res.json({status:200,msg:"User updated!"})
     })
-
+    // This was the route to verify and change the password and render a success page
     app.post('/cscorp/user/changePassword/:key_id', async(req,res,next)=>{
         let key_id = req.params.key_id;
         let msg = null;

@@ -15,9 +15,9 @@ class UserModel {
         let hash = await bcrypt.hash(req.body.password, saltRounds);
         let key_id = randomId(len,pattern);
 
-        let sql = 'INSERT INTO Users ( email, password, firstName, lastName, role, validate, key_id) VALUES (?, ?, ?, ?, ?,"no",?)'
+        let sql = 'INSERT INTO Users ( email, password, firstName, lastName, role, validate, key_id, validate) VALUES (?, ?, ?, ?, ?,"no",?)'
 
-        return db.query(sql,[req.body.email,hash,req.body.firstName,req.body.lastName,req.body.role,key_id])
+        return db.query(sql,[req.body.email,hash,req.body.firstName,req.body.lastName,req.body.role,key_id,"yes"])
         .then((res)=>{
             res.key_id = key_id;
             return res;
